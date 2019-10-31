@@ -1,5 +1,5 @@
 # SQL-Practice
 
 MySQL
-* table malnipulation
+* table manipulation
 * query function
