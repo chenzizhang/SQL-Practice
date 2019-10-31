@@ -1,0 +1,11 @@
+/*simple join*/
+
+SELECT Dep.Name AS 'Department', Em.Name AS 'Employee', Em.Salary
+FROM
+    Employee Em JOIN Department Dep
+    ON Em.DepartmentId = Dep.Id
+WHERE
+    (SELECT COUNT(DISTINCT Em1.Salary) 
+     FROM Employee Em1
+     WHERE Em1.Salary > Em.Salary AND Em1.DepartmentId = Em.DepartmentId) < 3
+;
