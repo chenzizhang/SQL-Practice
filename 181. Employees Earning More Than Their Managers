@@ -1,0 +1,8 @@
+
+SELECT em2.Name AS 'Employee'
+FROM 
+    Employee AS em2,
+    Employee AS manager 
+WHERE 
+    em2.ManagerId = manager.Id AND em2.Salary > manager.Salary
+;
