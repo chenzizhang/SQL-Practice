@@ -1,0 +1,20 @@
+/*Using sub-query and LIMIT clause */
+
+SELECT
+    (SELECT DISTINCT
+            Salary
+        FROM
+            Employee
+        ORDER BY Salary DESC
+        LIMIT 1 OFFSET 1) AS SecondHighestSalary
+;
+
+/* solve the 'NULL' problem, Using IFNULL and LIMIT clause*/
+
+SELECT
+    IFNULL(
+      (SELECT DISTINCT Salary
+       FROM Employee
+       ORDER BY Salary DESC
+        LIMIT 1 OFFSET 1),
+    NULL) AS SecondHighestSalary
